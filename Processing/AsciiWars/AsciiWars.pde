@@ -2,7 +2,7 @@ import java.nio.charset.StandardCharsets;
 
 boolean fullspeed =   false;
 boolean showframes = false;
-boolean saveframes = true;
+boolean saveframes = false;
 
 byte[] delays;
 byte[] rawdata;
@@ -10,7 +10,7 @@ int FRAMES = 3410;
 int LINES_PER_FRAME= 13;
 int  CHARS_PER_LINE = 67;
 int CHARS_PER_FRAME  = CHARS_PER_LINE * LINES_PER_FRAME;
-int FPS = 25;
+int FPS = 25;   PFont mono;
 byte[] get_frame(byte[] source, int fnum){
   return subset(source, fnum * CHARS_PER_FRAME,CHARS_PER_FRAME);
 }
@@ -19,8 +19,9 @@ void setup() {
   size(1280, 720);
   if (!fullspeed)
     frameRate(FPS);
-  textFont(createFont("mono.ttf", 28));
-  rawdata =  loadBytes("rawframes.txt");
+  mono =  createFont("mono.ttf", 28);
+  setFont(mono);
+  rawdata =  loadBytes("rawframes.bin");
   delays = loadBytes("delays.bin");
 }
 
