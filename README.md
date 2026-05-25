@@ -1,9 +1,11 @@
 # mo5_challenge
 
 Ce dépôt regroupe les informations
-sur le challenge à base de l'animation Asciiwars de Simon Jensn
+sur le challenge à base de l'animation Asciiwars de Simon Jensen
 
-<embed width="750" height="316" alt="frame" src="https://github.com/delhoume/mo5_challenge.asciiwars.mp4"/>
+<embed width="750" height="316" alt="frame" src="https://github.com/delhoume/mo5_challenge/asciiwars.mp4"/>
+
+
 #### RÈGLEMENT:
 
 Il n'y a pas de règlement, pas d'obligation,
