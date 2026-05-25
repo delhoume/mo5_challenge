@@ -18,18 +18,17 @@ Il s'agit uniquement de s'amuser avec cette animation et d'en faire ce qu'elle v
 
 - ligne 1: nombre décimal  representant le  nombre d'unités de temps pendant laquelle la frame doit être affchée
 
-lignes 2 à 13: jusqu'à 67 caractères ASCII représentant le contenu de la frame, calé à gauche.  
+- lignes 2 à 13: jusqu'à 67 caractères ASCII représentant le contenu de la frame, calé à gauche.  
 
 exemple:
 
 L'animation compte 3410 frames, et la durée totale est de  12.25mn à 25 images par seconde
-
-C>eformat est simple à parser mais n'est pas adadpté aux ordinateurs retro disposant de très peu de mémoire.
+Ce format est simple à parser mais n'est pas adadpté aux ordinateurs retro disposant de très peu de mémoire.
 
 - le script python ``python convert.py`` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, pour simplifier la visualiation dans le framework Processing avec  ```processing/asciiwars.pde```
 
-a partir de ```asciianim.txt```, on obtient
-```processing/data/delays.bin``` avec les 3410 delais chacun sur 1 octet, et ```processing/data/rawframes.bin```
+a partir de ```asciimation.txt```, on obtient
+```processing/data/delays.bin``` avec les 3410 delais chacun sur 1 octet, et ```processing/data/rawframes.bin (5410 x 67  x 13 octets)```
 
 un essai de compresion avec gzip ou zx5 montre que même si le fichier ```rawframes.bin``` est plus gros que ```asciimation.txt``` à cause de la normalisation, il est plus petit une fois compressé !
 
