@@ -20,7 +20,7 @@ void setup() {
   if (!fullspeed)
     frameRate(FPS);
   mono =  createFont("mono.ttf", 28);
-  setFont(mono);
+  textFont(mono);
   rawdata =  loadBytes("rawframes.bin");
   delays = loadBytes("delays.bin");
 }
