@@ -16,9 +16,9 @@ Il s'agit uniquement de s'amuser avec cette animation et d'en faire ce qu'elle v
 
 
 ####  Description des fichiers :  
-- ```asciimation.txt``` le fichier source de l'animation. 47740 lignes décrivant 3410 frames, soit 14 lignes par frame.
+- ```asciimation.txt``` le fichier source de l'animation. 47740 lignes décrivant 3410 frames, soit 14 lignes par frame. 11999080 octets
 
-- ligne 1: nombre décimal representant le nombre d'unités de temps pendant laquelle la frame doit être affchée
+- ligne 1: nombre décimal representant le nombre d'unités de temps pendant laquelle la frame doit être affichée
 
 - lignes 2 à 13: jusqu'à 67 caractères ASCII représentant le contenu de la frame, calé à gauche.
 
