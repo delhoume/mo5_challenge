@@ -2,7 +2,7 @@
 
 Ce dépôt regroupe les informations sur le challenge à base de l'animation Asciiwars de Simon Jensen
 
-![AsciiWars](https://github.com/delhoume/mo5_challenge/blob/main/asciiwars720.mp4)
+![AsciiWars](https://github.com/delhoume/mo5_challenge/blob/main/asciiwars720.gif)
 
 #### RÈGLEMENT:
 
