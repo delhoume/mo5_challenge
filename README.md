@@ -2,13 +2,11 @@
 
 Ce dépôt regroupe les informations sur le challenge à base de l'animation Asciiwars de Simon Jensen
 
-https://github.com/delhoume/mo5_challenge/blob/main/asciiwars.mp4
-
+![AsciiWars](https://github.com/delhoume/mo5_challenge/blob/main/asciiwars720.mp4)
 
 #### RÈGLEMENT:
 
-Il n'y a pas de règlement, pas d'obligation,
-pas d'enjeu
+Il n'y a pas de règlement, pas d'obligation, pas d'enjeu
 
 Il s'agit uniquement de s'amuser avec cette animation et d'en faire ce qu'elle vous inspire.
 
