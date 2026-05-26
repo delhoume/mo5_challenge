@@ -15,7 +15,7 @@ byte[] get_frame(byte[] source, int fnum){
   return subset(source, fnum * CHARS_PER_FRAME,CHARS_PER_FRAME);
 }
 
-void setup() {
+void setup() { 
   size(1280, 720);
   if (!fullspeed)
     frameRate(FPS);
