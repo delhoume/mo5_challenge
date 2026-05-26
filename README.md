@@ -29,10 +29,8 @@ Ce format est simple à parser mais n'est pas adadpté aux ordinateurs retro dis
 
 - le script python ``python convert.py`` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, pour simplifier la visualisation dans le framework Processing avec  ```processing/asciiwars.pde```
 
-à partir de `asciimation.txt`, on obtient
-`processing/data/delays.bin` avec les 3410 delais chacun sur 1 octet, et `processing/data/rawframes.bin (5410 x 67  x 13 octets)`
-
-un essai de compression avec gzip et zx5 montre que même si le fichier `rawframes.bin` est plus gros que `asciimation.txt` à cause de la normalisation, il est plus petit une fois compressé !
+à partir de ```asciimation.txt``, on obtient ```processing/data/delays.bin` avec les 3410 delais chacun sur 1 octet, et `processing/data/rawframes.bin (5410 x 67  x 13 octets)`
+un essai de compression avec gzip et zx5 montre que même si le fichier ```rawframes.bin``` est plus gros que ```asciimation.txt```,  à cause (grâce à) de la normalisation, il est plus petit une fois compressé !
 
 ```
 1999080 asciimation.txt
@@ -52,4 +50,4 @@ Quelques pistes pour reduire encore la taille:
 
 - la fréquence de certains caractères est beaucoup plus importante que d'autres, on pourrait en tenir compte
 
-- consdidérer les frames comme une image bitmao. voir le script python qui génère un pgm
+- considérer les frames comme une image bitmao. voir le script python qui génère un pgm
