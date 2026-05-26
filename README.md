@@ -29,9 +29,10 @@ exemple:
 L'animation compte 3410 frames, et la durée totale est de 12.25mn à 25 images par seconde
 Ce format est simple à parser mais n'est pas adadpté aux ordinateurs retro disposant de très peu de mémoire.
 
-- le script python ```python convert.py``` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, pour simplifier la visualisation dans le framework Processing (http://processing.org) avec  ```Processing/AsciiWars/AsciiWars.pde```
+- le script  ```python convert.py``` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, pour simplifier la visualisation dans le framework Processing (http://processing.org) avec  ```Processing/AsciiWars/AsciiWars.pde```
 
 à partir de ```asciimation.txt```, on obtient ```Processing/AsciiWars/data/delays.bin``` avec les 3410 delais chacun sur 1 octet, et ```Processing/AsciiWars/data/rawframes.bin``` (3410 x 13 x 67 = 2970110 octets) qui contient les frames brutes.
+
 Un essai de compression avec gzip et zx5 montre que même si le fichier ```rawframes.bin``` est plus gros que ```asciimation.txt```,  à cause (grâce à) de la normalisation, il est plus petit une fois compressé !
 
 | taille | fichier         |
@@ -42,10 +43,10 @@ Un essai de compression avec gzip et zx5 montre que même si le fichier ```rawfr
 |2970110|rawframes.bin|
 |69919|rawframes.bin.gz|
 |64228|rawframes.bin.zx0|
-```
 
- Le taux de compression est très important, on arrive à obtenir sans traitement particulier un ficher de moins de 16 bits qui démontre la possibiité matérielle d'avoir cette animation sur des micros 16bits.
-Il faudra disposer de librairies de décompression adaptées (en streaming)
+
+ Le taux de compression est très important, on arrive à obtenir sans traitement particulier un ficher de moins de 65536 octets qui démontre la possibiité matérielle d'avoir cette animation sur des micros 16bits.
+Il faudra disposer de librairies de décompression adaptées (en streaming), et encore gagner en taille...
 
 Quelques pistes pour reduire encore la taille:
 
