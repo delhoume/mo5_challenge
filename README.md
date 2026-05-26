@@ -23,14 +23,15 @@ Il s'agit uniquement de s'amuser avec cette animation et d'en faire ce qu'elle v
 - lignes 2 à 13: jusqu'à 67 caractères ASCII représentant le contenu de la frame, calé à gauche.
 
 exemple:
-https://github.com/delhoume/mo5_challenge/blob/main/frame.png
+
+![Frame](https://github.com/delhoume/mo5_challenge/blob/main/frame.png)
 
 L'animation compte 3410 frames, et la durée totale est de 12.25mn à 25 images par seconde
 Ce format est simple à parser mais n'est pas adadpté aux ordinateurs retro disposant de très peu de mémoire.
 
 - le script python ``python convert.py`` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, pour simplifier la visualisation dans le framework Processing avec  ```processing/asciiwars.pde```
 
-a partir de `asciimation.txt`, on obtient
+à partir de `asciimation.txt`, on obtient
 `processing/data/delays.bin` avec les 3410 delais chacun sur 1 octet, et `processing/data/rawframes.bin (5410 x 67  x 13 octets)`
 
 un essai de compression avec gzip et zx5 montre que même si le fichier `rawframes.bin` est plus gros que `asciimation.txt` à cause de la normalisation, il est plus petit une fois compressé !
