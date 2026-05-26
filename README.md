@@ -36,7 +36,7 @@ Un essai de compression avec gzip et zx5 montre que même si le fichier ```rawfr
 
 | taille | fichier         |
 |--------|-----------------|
-|1999080|asciims           
+|1999080|asciimation.txt           
 |72714|asciimation.txt.gz|
 |71227|asciimation.txt.zx0|
 |2970110|rawframes.bin|
