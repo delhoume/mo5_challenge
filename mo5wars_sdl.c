@@ -41,6 +41,12 @@ static const int SCREEN_SIZE_BYTES = BYTES_WIDTH * HEIGHT;
 
 static unsigned char VRAM_FORM[SCREEN_SIZE_BYTES];
 static unsigned char VRAM_COLOR[SCREEN_SIZE_BYTES];
+
+
+#define FRAME_CHAR_WIDTH 67
+#define FRAME_CHAR_HEIGHT 12
+#define TOTAL_FRAMES 3410
+
 static int save_frames = 0;
 static int cframe = 0;
 static SDL_Window *g_window = NULL;
@@ -169,11 +175,11 @@ static void update_window_title(SDL_Window *window) {
 
   if (save_frames) {
     snprintf(title, sizeof(title),
-             "MO5 Animation - frame %d - press S to stop saving ", cframe);
+             "MO5 Animation - frame %d / %d- press S to stop saving ", cframe + 1, TOTAL_FRAMES);
   } else {
     snprintf(title, sizeof(title),
-             "MO5 Animation - frame %d - press S to start saving to PNG",
-             cframe);
+             "MO5 Animation - frame %d / %d- press S to start saving to PNG",
+             cframe + 1, TOTAL_FRAMES);
   }
   SDL_SetWindowTitle(window, title);
 }
@@ -214,9 +220,6 @@ static int wait_ticks(int ticks) {
     }
   }
 }
-
-#define FRAME_CHAR_WIDTH 67
-#define FRAME_CHAR_HEIGHT 12
 
 void fill_screen(unsigned char value) {
   for (int p = 0; p < SCREEN_SIZE_BYTES; p++) {
@@ -492,7 +495,7 @@ int main(int argc, char *argv[]) {
   drawstringCenteredH("Animation: Simon Jensen | Code: Frederic Delhoume", -1,
                       HEIGHT - (bandheight / 2) - font->glyphheight,
                       font);
-  drawstringCenteredH("  www.asciimation.co.nz | github.com/delhoume", -1,
+  drawstringCenteredH("  www.asciimation.co.nz | github.com/delhoume    ", -1,
                       HEIGHT - (bandheight / 2) + font->glyphheight, font);
   int running = 1;
   unsigned char c= READ_ONE_VALUE; 

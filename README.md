@@ -66,7 +66,7 @@ pour l'instant je n'ai pas réussi a lire vers un buffer limité en ram, en char
 
 
 
-S'il est possible de stoker ce fichier sur une disquette, selon les vitesses de transfert il devrait être possible de ne garder qu'une partie en RAM, voire de lire directement depuis la disquette. une frame fait avant compression 13x67 = 884, et 1/4 environ compressé.
+S'il est possible de stocker ce fichier sur une disquette, selon les vitesses de transfert il devrait être possible de ne garder qu'une partie en RAM, voire de lire directement depuis la disquette. une frame fait avant compression 13x67 = 884, et 1/4 environ compressé.
 
 l'affichage sur mo5 est tronqué, avec une police de 5x5 et un pixedl écart entre caractères de 1 pixel il faut une largeur de 402 pixels  pour afficher toute la largeur.
 
