@@ -1,3 +1,11 @@
 ._*
 .vscode/settings.json
 /frames
+/Processing
+Processing/AsciiWars/data/rawframes.bin.zst
+/Processing
+/Processing/AsciiWars
+.vscode/launch.json
+mo5wars_sdl
+pack7bits
+/Processing

@@ -1,0 +1,10 @@
+asciimation.txt     -> animation originale
+convert.py          -> programme de compression par encodage de répétitions
+delays.h            -> tableau des delais uniquement
+fichiers.txt
+mo5wars_sdl.c       -> code source du programme d'affichage de l'animation
+nitram5x5.h         -> police 5x5
+sans512_8.h         -> police 8x8
+stb_image_write.h   -> header pour les fonctions d'écriture d'images
+makefile            -> make clean run
+pack7bits.c         -> compresse des fichiers 8 bits ascii (0 à 128) vers du 7 bits
