@@ -22,25 +22,54 @@ Il s'agit uniquement de s'amuser avec cette animation et d'en faire ce qu'elle v
 
 - lignes 2 à 13: jusqu'à 67 caractères ASCII représentant le contenu de la frame, calé à gauche. chaque ligne est rtrminée par un '\n', la fin de ligne est vide.
 
+```
+
+                |~ \___/ ~|         []|[]
+                /=\ /=\ /=\         | | |
+________________[_]_[_]_[_]________/_]_[_\_________________________
+4
+                                     /~\
+                                    |oo )
+                                    _\=/_
+                    ___        #   /  _  \
+                   / ()\        \\//|/.\|\\
+                 _|_____|_       \/  \_/  ||
+                | | === | |         |\ /| ||
+                |_|  O  |_|         \_ _/  #
+                 ||  O  ||          | | |
+                 ||__*__||          | | |
+                |~ \___/ ~|         []|[]
+                /=\ /=\ /=\         | | |
+________________[_]_[_]_[_]________/_]_[_\_________________________
+6
+                                     /~\
+                                    |oo )
+                                    _\=/_
+                    ___         #  /  _  \  #
+                   /() \        \\//|/.\|\\//
+                 _|_____|_       \/  \_/  \/
+                | | === | |         |\ /|
+                |_|  O  |_|         \_ _/
+```
 
 L'animation compte 3410 frames, et la durée totale est de 12.25mn à 25 images par seconde
 Ce format est simple à parser mais n'est pas adapté aux ordinateurs retro disposant de très peu de mémoire.
 
-- le script  ```convert.py``` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, et encode les répétitions de caractères fréquentes avec des opcodes specialisés de 1 ou 3 octets < 128, donc toujours 7 bits. Le fichier genéré par le makefile est asciimation8.bin et fait 36% de la taille d'origine. IL y a beaucoup de trous dans les valeurs utilisées par l'animation du fait de la présence de caractères affichables  uniquements.
+- le script  ```convert.py``` sépare les délais et le contenu graphique des frames normalisées à 67 caractères, et encode les répétitions de caractères fréquentes avec des opcodes specialisés de 1 ou 3 octets < 128, donc toujours 7 bits. Le fichier genéré par le ```makefile``` est ```asciimation8.bin``` et fait 36% de la taille d'origine. Il y a beaucoup de trous dans les valeurs utilisées par l'animation du fait de la présence de caractères affichables uniquements.
 
 
-Ce fichier est ensuite compacté avec 7 bits par valeur par `pack7bits.c` qui encode avec une réduction suplémentaire  de 8.75%. Au final, les données de frames passent de 1843039 à 572587 octets.
+Ce fichier est ensuite compacté avec 7 bits par valeur par ```pack7bits.c``` qui encode avec une réduction suplémentaire  de 8.75%. Au final, les données de frames passent de 1843039 à 572587 octets.
 
-Le visualiseur SDL `mo5wars_sdl.c` lit le fichier `asciimation7.bin` généré par pack7bit, le décode à la volée et affiche en boucle les frames. Son modèle graphique est celui du mo5.
+Le visualiseur SDL `mo5wars_sdl.c` lit le fichier ```asciimation7.bin``` généré par pack7bit, le décode à la volée et affiche en boucle les frames. Son modèle graphique est celui du mo5.
 
-pour l'instant je n'ai pas éussi a lire vers un buffer limité en ram, en chargeant depuis le fichier quand le buffer est épuisé.
+pour l'instant je n'ai pas réussi a lire vers un buffer limité en ram, en chargeant depuis le fichier quand le buffer est épuisé.
 
 
 
 S'il est possible de stoker ce fichier sur une disquette, selon les vitesses de transfert il devrait être possible de ne garder qu'une partie en RAM, voire de lire directement depuis la disquette. une frame fait avant compression 13x67 = 884, et 1/4 environ compressé.
 
-l'affichage sur mo5 est tronqué, avec une police de 5x5 etu n  écart entre caractères de 1, il faut une largeur de 402 pixels  pour afficher toute la largeur.
+l'affichage sur mo5 est tronqué, avec une police de 5x5 et un pixedl écart entre caractères de 1 pixel il faut une largeur de 402 pixels  pour afficher toute la largeur.
 
 
 C'est la valeur par défaut dans mo5wars.c, pour voir l'effet sur un mo5, il suffit de definir MO5 à la compilation.
-`>make clean run MO5=-DMO5`
+```>make clean run MO5=-DMO5```
