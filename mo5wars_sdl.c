@@ -25,7 +25,7 @@
 #define COLOR(fore, back) ((back) << 4 | (fore))
 
  // multiple of 8, need 330 with advancex = 0
- // or text to be readabl, advancex mus be 1, this make =s iknal width 4058
+ // or text to be readable, advancex mus be 1, this makes final width 4058
 #if defined (MO5)
 static const int WIDTH = 320; 
 #else
@@ -498,6 +498,7 @@ int main(int argc, char *argv[]) {
   drawstringCenteredH("  www.asciimation.co.nz | github.com/delhoume    ", -1,
                       HEIGHT - (bandheight / 2) + font->glyphheight, font);
   int running = 1;
+  init_anim();
   unsigned char c= READ_ONE_VALUE; 
   while (running) { 
     running = process_events();
